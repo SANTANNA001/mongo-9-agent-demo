@@ -40,6 +40,13 @@ python3 -m venv .venv
 .venv/bin/pip install notebook 2>&1 | tail -3
 .venv/bin/pip install -r requirements.txt 2>&1 | tail -3
 
+echo "=== Registering venv as Jupyter kernel ==="
+.venv/bin/pip install ipykernel 2>&1 | tail -1
+.venv/bin/python -m ipykernel install --user --name mongo-9-agent-demo --display-name "Python 3 (mongo-9-agent-demo)" 2>&1
+
+echo "=== Verifying venv Python ==="
+.venv/bin/python -c "import sklearn, ollama, requests; print('venv OK')"
+
 echo "=== Configuring code-server ==="
 mkdir -p /root/.config/code-server /root/.local/share/code-server/User
 
@@ -52,7 +59,7 @@ disable-telemetry: true
 disable-update-check: true
 EOF
 
-# User settings — dark theme, auto-select Python venv
+# User settings — dark theme, auto-select venv kernel
 cat > /root/.local/share/code-server/User/settings.json << 'EOF'
 {
     "workbench.colorTheme": "Default Dark Modern",
@@ -62,7 +69,8 @@ cat > /root/.local/share/code-server/User/settings.json << 'EOF'
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.enabled": false,
     "jupyter.kernels.filter": [
-        {"path": "/root/mongo-9-agent-demo/.venv/bin/python"}
+        {"path": "/root/mongo-9-agent-demo/.venv/bin/python"},
+        {"displayName": "Python 3 (mongo-9-agent-demo)"}
     ]
 }
 EOF
