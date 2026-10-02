@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu
+
+OUTPUT="/root/mongo-9-agent-demo/support_findings.md"
+
+if [ -f "$OUTPUT" ] && grep -q "Risk" "$OUTPUT" 2>/dev/null; then
+    echo "PASS: Multi-agent report found with structured findings"
+else
+    echo "FAIL: Final report not found — did you run both Investigator and Reviewer agents in notebook 3?"
+    exit 1
+fi

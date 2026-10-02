@@ -1,0 +1,19 @@
+slug: mongodb-9-0-agent-demo
+title: MongoDB 9.0 Agent Demo
+teaser: A short description of the track.
+description: |-
+  A long description of the track.
+
+  You can use any GitHub flavoured markdown.
+icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/default.png
+tags: []
+owner: mongodb-ts-dev
+developers:
+- santanna.babatope@mongodb.com
+lab_config:
+  sidebar_enabled: true
+  feedback_recap_enabled: true
+  feedback_tab_enabled: false
+  loadingMessages: true
+  hideStopButton: false
+enhanced_loading: false

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu
+
+OUTPUT="/root/mongo-9-agent-demo/support_findings.md"
+
+if [ -f "$OUTPUT" ] && [ -s "$OUTPUT" ]; then
+    echo "PASS: support_findings.md found with content"
+else
+    echo "FAIL: support_findings.md not found or empty — did you run the agent loop in notebook 2?"
+    exit 1
+fi

@@ -1,0 +1,6 @@
+version: "3"
+containers:
+- name: host01
+  image: ubuntu:noble
+  shell: /bin/bash
+  memory: 8192

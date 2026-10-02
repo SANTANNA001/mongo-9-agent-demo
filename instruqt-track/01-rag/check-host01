@@ -1,0 +1,17 @@
+#!/bin/bash
+set -eu
+
+NOTEBOOK="/root/mongo-9-agent-demo/1_rag.ipynb"
+
+# Check notebook was executed — execution_count goes from null to a number
+python3 -c "
+import json
+with open('$NOTEBOOK') as f:
+    nb = json.load(f)
+executed = sum(1 for c in nb['cells'] if c.get('execution_count') is not None)
+if executed >= 3:
+    print(f'PASS: {executed} cells executed')
+else:
+    print(f'FAIL: only {executed} cells executed — did you run all cells?')
+    exit(1)
+"

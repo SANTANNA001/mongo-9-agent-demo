@@ -1,0 +1,36 @@
+slug: mongo-9-agent-demo
+id: x7jiovaeimkz
+title: MongoDB 9.0 AI Agent Lab
+teaser: Build RAG, single-agent, and two-agent AI systems that investigate a real
+  MongoDB 9.0 upgrade case — all running locally with Ollama.
+description: |
+  In this hands-on lab, you'll build three AI systems of increasing complexity.
+
+  You'll start with RAG — giving an LLM access to MongoDB 9.0 release notes so it can answer questions it was never trained on. Then you'll build an agent that chooses its own diagnostic tools. Finally, you'll split the work across two specialized agents.
+
+  Everything runs locally. No cloud. No API keys. Just Ollama, Python, and Jupyter.
+icon: https://cdn.instruqt.com/assets/templates/ubuntu.png
+tags:
+- rag
+- mongodb
+- ollama
+- agents
+- python
+- ai
+owner: mongodb-ts-dev
+developers:
+- santanna.babatope@mongodb.com
+show_timer: true
+skipping_enabled: true
+idle_timeout: 300
+timelimit: 3600
+lab_config:
+  extend_ttl: 600
+  sidebar_enabled: true
+  feedback_recap_enabled: true
+  feedback_tab_enabled: false
+  loadingMessages: true
+  hideStopButton: false
+  default_layout: AssignmentRight
+checksum: "16122550889429906206"
+enhanced_loading: false
